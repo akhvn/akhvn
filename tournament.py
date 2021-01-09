@@ -12,6 +12,15 @@ def annoying_input_int(message =''):
             print('Вы ввели недопустимые символы')
     return answer
 
+def Choose_Type(name):
+    answer = input()
+    if answer == 'Wizard':
+        hero = Wizard(name)
+    if answer == 'Jagernaut':
+        hero = Jagernaut(name)
+    if answer == 'Healer':
+        hero = Healer(name)
+
 
 def game_tournament(hero, dragon_list):
     for dragon in dragon_list:
@@ -78,7 +87,9 @@ def start_game():
     try:
         print('Добро пожаловать в арифметико-ролевую игру с драконами!')
         print('Представьтесь, пожалуйста: ', end = '')
-        hero = Hero(input())
+        name = input()
+        print('Выберете класс(Wizard(75,120), Healer(50,50), Jagernaut(120,60)): ', end='')
+        Choose_Type(input(), name)
         if randint(1,2)==1:
             dragon_number = randint(2,15)
             dragon_list = generate_dragon_list(dragon_number)
