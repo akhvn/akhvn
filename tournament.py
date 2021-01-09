@@ -90,19 +90,40 @@ def start_game():
     try:
         print('Добро пожаловать в арифметико-ролевую игру с драконами!')
         print('Представьтесь, пожалуйста: ', end = '')
-        name = input()
-        print('Выберете класс(Wizard(75,120), Healer(50,50), Jagernaut(120,60)): ', end='')
-        Choose_Type(input(), name)
-        if randint(1,2)==1:
-            dragon_number = randint(2,15)
-            dragon_list = generate_dragon_list(dragon_number)
-            print('У Вас на пути', dragon_number, rod_dragon(dragon_number)+'!')
-            game_tournament(hero, dragon_list)
-        else:
-            troll_number = randint(2,15)
-            troll_list = generate_troll_list(troll_number)
-            print('Вам не дают пройти', troll_number, rod_troll(troll_number)+'!')
-            game_trollnament(hero, troll_list)
+        hero = Hero(input())
+        if hero._lvl == 1 or hero._lvl == 2:
+            if randint(1,2)==1:
+                dragon_number = randint(2,15)
+                dragon_list = generate_dragon_list(dragon_number)
+                print('У Вас на пути', dragon_number, rod_dragon(dragon_number)+'!')
+                game_tournament(hero, dragon_list)
+            else:
+                troll_number = randint(2,15)
+                troll_list = generate_troll_list(troll_number)
+                print('Вам не дают пройти', troll_number, rod_troll(troll_number)+'!')
+                game_trollnament(hero, troll_list)
+        elif hero._lvl == 3 or hero._lvl == 4:
+            if randint(1,2)==1:
+                dragon_number = randint(2,10)
+                dragon_list = generate_mid_dragon_list(dragon_number)
+                print('У Вас на пути', dragon_number, rod_dragon(dragon_number)+'!')
+                game_tournament(hero, dragon_list)
+            else:
+                troll_number = randint(2,10)
+                troll_list = generate_mid_troll_list(troll_number)
+                print('Вам не дают пройти', troll_number, rod_troll(troll_number)+'!')
+                game_trollnament(hero, troll_list)
+        elif hero._lvl == 5:
+            if randint(1,2)==1:
+                dragon_number = randint(2,5)
+                dragon_list = generate_hard_dragon_list(dragon_number)
+                print('У Вас на пути', dragon_number, rod_dragon(dragon_number)+'!')
+                game_tournament(hero, dragon_list)
+            else:
+                troll_number = randint(2,5)
+                troll_list = generate_hard_troll_list(troll_number)
+                print('Вам не дают пройти', troll_number, rod_troll(troll_number)+'!')
+                game_trollnament(hero, troll_list)
 
     except EOFError:
         print('Поток ввода закончился. Извините, принимать ответы более невозможно.')
