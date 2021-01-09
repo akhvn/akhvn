@@ -16,6 +16,18 @@ class Wizard(Attacker):
         self._experience = 0
         self._name = name
         self._inportance = 1.5
+    def add_experience(self):
+        self._experience = self._experience + 25
+        if self._experience >= 0 and self._experience <= 99:
+            self._lvl = 1
+        elif self._experience >= 100 and self._experience <= 199:
+            self._lvl = 2
+        elif self._experience >= 200 and self._experience < 299:
+            self._lvl = 3
+        elif self._experience >= 300 and self._experience <= 399:
+            self._lvl = 4
+        elif self._experience >= 400 and self._experience <= 500:
+            self._lvl = 5
 class Healer(Attacker):
     _lvl = 1
     def __init__(self):
@@ -24,6 +36,18 @@ class Healer(Attacker):
         self._experience = 0
         self._name = name
         self._inportance = 0.5
+    def add_experience(self):
+        self._experience = self._experience + 25
+        if self._experience >= 0 and self._experience <= 99:
+            self._lvl = 1
+        elif self._experience >= 100 and self._experience <= 199:
+            self._lvl = 2
+        elif self._experience >= 200 and self._experience < 299:
+            self._lvl = 3
+        elif self._experience >= 300 and self._experience <= 399:
+            self._lvl = 4
+        elif self._experience >= 400 and self._experience <= 500:
+            self._lvl = 5
 class Jagernaut(Attacker):
     _lvl = 1
     def __init__(self):
@@ -32,6 +56,18 @@ class Jagernaut(Attacker):
         self._experience = 0
         self._name = name
         self._inportance = 1.15
+    def add_experience(self):
+        self._experience = self._experience + 25
+        if self._experience >= 0 and self._experience <= 99:
+            self._lvl = 1
+        elif self._experience >= 100 and self._experience <= 199:
+            self._lvl = 2
+        elif self._experience >= 200 and self._experience < 299:
+            self._lvl = 3
+        elif self._experience >= 300 and self._experience <= 399:
+            self._lvl = 4
+        elif self._experience >= 400 and self._experience <= 500:
+            self._lvl = 5
 class Imba(Attacker):
     _lvl = 1
     def __init__(self):
@@ -40,6 +76,18 @@ class Imba(Attacker):
         self._experience = 0
         self._name = name
         self._inportance = 5
+    def add_experience(self):
+        self._experience = self._experience + 25
+        if self._experience >= 0 and self._experience <= 99:
+            self._lvl = 1
+        elif self._experience >= 100 and self._experience <= 199:
+            self._lvl = 2
+        elif self._experience >= 200 and self._experience < 299:
+            self._lvl = 3
+        elif self._experience >= 300 and self._experience <= 399:
+            self._lvl = 4
+        elif self._experience >= 400 and self._experience <= 500:
+            self._lvl = 5
 
 
 def attack(self, target):
