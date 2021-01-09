@@ -26,7 +26,12 @@ class Jagernaut(Attacker):
         self._attack = 60
         self._experience = 0
         self._name = name
-
+class Imba(Attacker):
+    def __init__(self):
+        self._health = 1000
+        self._attack = 1000
+        self._experience = 0
+        self._name = name
 
 
 def attack(self, target):
