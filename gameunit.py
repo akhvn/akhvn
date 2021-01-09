@@ -5,7 +5,8 @@
 class Attacker:
     _health = None
     _attack = None
-
+    _experience = None
+    
     def attack(self, target):
         target._health -= self._attack
 
