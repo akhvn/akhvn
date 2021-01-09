@@ -20,6 +20,8 @@ def Choose_Type(name):
         hero = Jagernaut(name)
     if answer == 'Healer':
         hero = Healer(name)
+    if answer == 'Imba':
+        hero = Imba(name)
 
 
 def game_tournament(hero, dragon_list):
