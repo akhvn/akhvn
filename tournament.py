@@ -40,17 +40,7 @@ def game_tournament(hero, dragon_list):
         if dragon.is_alive():
             break
         print('Дракон', dragon._color, 'повержен!\n')
-        hero._experience+=10
-    if hero._experience >= 0 and hero._experience <= 99:
-        hero._lvl = 1
-    elif hero._experience >= 100 and hero._experience <= 199:
-        hero._lvl = 2
-    elif hero._experience >= 200 and hero._experience < 299:
-        hero._lvl = 3
-    elif hero._experience >= 300 and hero._experience <= 399:
-        hero._lvl = 4
-    elif hero._experience >= 400 and hero._experience <= 500:
-        hero._lvl = 5
+    hero.add_experience()
 
     if hero.is_alive():
         print('Поздравляем! Вы победили!')
@@ -74,17 +64,8 @@ def game_trollnament(hero, troll_list):
         if troll.is_alive():
             break
         print('Тролль', troll._color, 'затроллен!\n')
-        hero._experience+=20
-    if hero._experience >= 0 and hero._experience <= 99:
-        hero._lvl = 1
-    elif hero._experience >= 100 and hero._experience <= 199:
-        hero._lvl = 2
-    elif hero._experience >= 200 and hero._experience < 299:
-        hero._lvl = 3
-    elif hero._experience >= 300 and hero._experience <= 399:
-        hero._lvl = 4
-    elif hero._experience >= 400 and hero._experience <= 500:
-        hero._lvl = 5
+    hero.add_experience()
+
 
     if hero.is_alive():
         print('Поздравляем! Вы победили!')
